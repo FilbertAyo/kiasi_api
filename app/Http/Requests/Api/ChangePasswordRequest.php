@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Requests\Api;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Password;
+
+class ChangePasswordRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'current_password' => ['required', 'string'],
+            'password' => ['required', 'confirmed', Password::min(8), 'different:current_password'],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'password.min' => 'The new password must be at least 8 characters.',
+            'password.different' => 'The new password must be different from the current password.',
+        ];
+    }
+}
+

@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\TransactionController as AdminTransactionControll
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 // Maintenance Routes (for development/testing purposes only)
@@ -32,6 +33,36 @@ Route::get('/maintenance/optimize', function () {
 Route::get('/maintenance/config-cache', function () {
     Artisan::call('config:cache');
     return 'Config cache created!';
+});
+
+// Test Email Route (for development/testing purposes only)
+// Remove or secure before going to production!
+Route::get('/test/email', function () {
+    try {
+        $email = 'filbertayo09@gmail.com';
+        $subject = 'Test Email from Kiasi Daily API';
+        $message = "This is a test email from the Kiasi Daily API.\n\n";
+        $message .= "If you received this email, the email configuration is working correctly.\n\n";
+        $message .= "Sent at: " . now()->format('Y-m-d H:i:s') . "\n";
+        $message .= "Application: " . config('app.name') . "\n";
+        
+        Mail::raw($message, function ($mail) use ($email, $subject) {
+            $mail->to($email)
+                 ->subject($subject);
+        });
+        
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Test email sent successfully to ' . $email,
+            'sent_at' => now()->toDateTimeString(),
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Failed to send email: ' . $e->getMessage(),
+            'error' => $e->getTraceAsString(),
+        ], 500);
+    }
 });
 
 // Redirect home to login

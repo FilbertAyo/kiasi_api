@@ -8,7 +8,7 @@
                     </a>
                 </div>
                 <h1 class="auth-title">Log in.</h1>
-                <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                <p class="auth-subtitle mb-5">Log in with your admin credentials to access the portal.</p>
 
                 @if (session('status'))
                     <div class="alert alert-success mb-4">
@@ -52,7 +52,6 @@
                 </form>
                 
                 <div class="text-center mt-5 text-lg fs-4">
-                    <p class="text-gray-600">Don't have an account? <a href="{{ route('register') }}" class="font-bold">Sign up</a>.</p>
                     @if (Route::has('password.request'))
                         <p><a class="font-bold" href="{{ route('password.request') }}">Forgot password?</a></p>
                     @endif

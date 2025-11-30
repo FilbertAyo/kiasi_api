@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FaqController;
@@ -9,7 +10,29 @@ use App\Http\Controllers\Admin\StaticContentController;
 use App\Http\Controllers\Admin\TransactionController as AdminTransactionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+
+// Maintenance Routes (for development/testing purposes only)
+// Remove or secure before going to production!
+Route::get('/maintenance/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('optimize:clear');
+    return 'Application cache, config, route, view and optimize cleared!';
+});
+
+Route::get('/maintenance/optimize', function () {
+    Artisan::call('optimize');
+    return 'Application optimized!';
+});
+
+Route::get('/maintenance/config-cache', function () {
+    Artisan::call('config:cache');
+    return 'Config cache created!';
+});
 
 // Redirect home to login
 Route::get('/', function () {
@@ -30,6 +53,15 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Admins Management
+    Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
+    Route::get('/admins/create', [AdminController::class, 'create'])->name('admins.create');
+    Route::post('/admins', [AdminController::class, 'store'])->name('admins.store');
+    Route::get('/admins/{admin}/edit', [AdminController::class, 'edit'])->name('admins.edit');
+    Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
+    Route::post('/admins/{admin}/disable', [AdminController::class, 'disable'])->name('admins.disable');
+    Route::post('/admins/{admin}/enable', [AdminController::class, 'enable'])->name('admins.enable');
 
     // Users Management
     Route::get('/users', [UserController::class, 'index'])->name('users.index');

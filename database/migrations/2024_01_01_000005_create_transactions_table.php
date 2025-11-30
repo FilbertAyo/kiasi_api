@@ -24,6 +24,8 @@ return new class extends Migration
             // Indexes for performance
             $table->index(['user_id', 'date']);
             $table->index(['user_id', 'type', 'date']);
+
+            $table->softDeletes();
         });
     }
 

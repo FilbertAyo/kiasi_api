@@ -87,6 +87,13 @@
 
                         <li class="sidebar-title">System</li>
 
+                        <li class="sidebar-item {{ request()->routeIs('admin.admins.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.admins.index') }}" class='sidebar-link'>
+                                <i class="bi bi-shield-check"></i>
+                                <span>Admins</span>
+                            </a>
+                        </li>
+
                         <li class="sidebar-item {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
                             <a href="{{ route('admin.settings.index') }}" class='sidebar-link'>
                                 <i class="bi bi-gear-fill"></i>

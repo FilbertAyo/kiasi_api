@@ -1,0 +1,208 @@
+/* Kiasi Daily Brand Color Override */
+:root {
+    --bs-primary: #00D09C;
+    --bs-blue: #00D09C;
+}
+
+/* Primary Button */
+.btn-primary,
+.btn.btn-primary {
+    background-color: #00D09C;
+    border-color: #00D09C;
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+    background-color: #00B887;
+    border-color: #00B887;
+    color: #fff;
+}
+
+/* Primary Text */
+.text-primary {
+    color: #00D09C !important;
+}
+
+/* Primary Background */
+.bg-primary {
+    background-color: #00D09C !important;
+    color: #fff;
+}
+
+/* Light Primary Background */
+.bg-light-primary {
+    background-color: rgba(0, 208, 156, 0.1) !important;
+    color: #003D2E;
+}
+
+.btn-light-primary {
+    background-color: rgba(0, 208, 156, 0.1);
+    color: #003D2E;
+}
+
+.btn-light-primary:hover {
+    background-color: rgba(0, 208, 156, 0.2);
+    color: #003D2E;
+}
+
+/* Primary Outline */
+.btn-outline-primary {
+    color: #00D09C;
+    border-color: #00D09C;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background-color: #00D09C;
+    border-color: #00D09C;
+    color: #fff;
+}
+
+/* Primary Alert */
+.alert-primary {
+    background-color: #00D09C;
+    color: #fff;
+}
+
+.alert-light-primary {
+    background-color: rgba(0, 208, 156, 0.1);
+    color: #003D2E;
+}
+
+/* Primary Badge */
+.badge.bg-primary,
+.badge.bg-light-primary {
+    background-color: #00D09C !important;
+    color: #fff;
+}
+
+.badge.bg-light-primary {
+    background-color: rgba(0, 208, 156, 0.1) !important;
+    color: #003D2E;
+}
+
+/* Primary Progress Bar */
+.progress-bar.bg-primary {
+    background-color: #00D09C !important;
+}
+
+.progress.progress-primary .progress-bar {
+    background-color: #00D09C;
+}
+
+/* Primary Form Controls */
+.form-check-input.form-check-primary,
+.form-check-input:checked[type=checkbox].form-check-primary,
+.form-check-input:checked[type=radio].form-check-primary {
+    background-color: #00D09C;
+    border-color: #00D09C;
+}
+
+.form-check-input.form-check-primary.form-check-glow {
+    box-shadow: 0 0 5px rgba(0, 208, 156, 0.5);
+}
+
+.form-group.with-title .form-control:focus ~ label,
+.form-group.with-title dataTable-input:focus ~ label {
+    border-left: 1px solid #00D09C;
+    border-top: 1px solid #00D09C;
+    border-right: 1px solid #00D09C;
+}
+
+/* Primary Nav Tabs */
+.nav-tabs .nav-link.active {
+    color: #00D09C;
+}
+
+.nav-tabs .nav-link.active:after {
+    background-color: #00D09C;
+    box-shadow: 0 2px 5px rgba(0, 208, 156, 0.5);
+}
+
+/* Primary Sidebar */
+.sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
+    background-color: #00D09C;
+}
+
+.sidebar-wrapper .menu .submenu .submenu-item.active > a {
+    color: #00D09C;
+}
+
+/* Primary Pagination */
+.pagination.pagination-primary .page-item.active .page-link {
+    background-color: #00D09C;
+    border-color: #00D09C;
+    box-shadow: 0 2px 5px rgba(0, 208, 156, 0.3);
+}
+
+/* Primary Nav Pills */
+.nav-pills .nav-link.active {
+    box-shadow: 0 2px 10px rgba(0, 208, 156, 0.5);
+}
+
+/* Primary Pricing Card */
+.pricing .card-highlighted {
+    background-color: #00D09C;
+}
+
+.pricing .card-highlighted .card-body,
+.pricing .card-highlighted .card-header,
+.pricing .card-highlighted .card-footer {
+    background-color: #00D09C;
+}
+
+/* Primary Avatar */
+.avatar.bg-primary {
+    background-color: #00D09C !important;
+}
+
+.avatar.bg-light-primary {
+    background-color: rgba(0, 208, 156, 0.1) !important;
+}
+
+/* Primary Link Hover */
+a.text-primary:hover {
+    color: #00B887 !important;
+}
+
+/* Primary Focus States */
+.form-control:focus,
+.dataTable-input:focus {
+    border-color: #00D09C;
+    box-shadow: 0 0 0 0.2rem rgba(0, 208, 156, 0.25);
+}
+
+/* Primary Checkbox/Radio */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    accent-color: #00D09C;
+}
+
+/* Chat Application Primary Color */
+.chat-app .chat-app-body .the-contact.active {
+    background-color: #00D09C !important;
+}
+
+/* Override any remaining hardcoded primary colors */
+[style*="#435ebe"],
+[style*="435ebe"] {
+    /* Note: Inline styles will need manual updates */
+}
+
+/* Additional primary color overrides for app.css */
+.alert-primary {
+    background-color: #00D09C !important;
+}
+
+/* Stats Icon Purple (if used as primary) */
+.stats-icon.purple {
+    background-color: #00D09C;
+}
+

@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom-brand.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/kiasi_logo.svg') }}" type="image/x-icon">
     @stack('styles')
 </head>
 
@@ -25,8 +26,9 @@
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="{{ route('dashboard') }}">
-                                <span class="h4 text-primary fw-bold">Kiasi Daily</span>
+                            <a href="{{ route('dashboard') }}" class="d-flex align-items-center text-decoration-none">
+                                <img src="{{ asset('assets/images/logo/kiasi_logo.svg') }}" alt="Kiasi Daily" style="width: 40px; height: 40px; margin-right: 10px;">
+                                <span class="h4 text-primary fw-bold mb-0">Kiasi Daily</span>
                             </a>
                         </div>
                         <div class="toggler">

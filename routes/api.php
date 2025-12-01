@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\ConfigController;
 use App\Http\Controllers\Api\V1\ContentController;
 use App\Http\Controllers\Api\V1\DeviceController;
 use App\Http\Controllers\Api\V1\SettingsController;
+use App\Http\Controllers\Api\V1\StatisticsController;
 use App\Http\Controllers\Api\V1\SummaryController;
 use App\Http\Controllers\Api\V1\SupportController;
 use App\Http\Controllers\Api\V1\TransactionController;
@@ -88,7 +89,13 @@ Route::prefix('v1')->group(function () {
             Route::get('/daily', [SummaryController::class, 'daily']);
             Route::get('/weekly', [SummaryController::class, 'weekly']);
             Route::get('/monthly', [SummaryController::class, 'monthly']);
+            Route::get('/range', [SummaryController::class, 'range']);
             Route::get('/category', [SummaryController::class, 'category']);
+        });
+
+        // Statistics endpoints
+        Route::prefix('statistics')->group(function () {
+            Route::get('/overview', [StatisticsController::class, 'overview']);
         });
 
         // Categories

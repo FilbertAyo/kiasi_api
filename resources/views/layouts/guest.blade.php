@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/pages/auth.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom-brand.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/kiasi_logo.svg') }}" type="image/x-icon">
 </head>
 
 <body>

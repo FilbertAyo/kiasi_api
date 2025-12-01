@@ -3,8 +3,9 @@
         <div class="col-lg-5 col-12">
             <div id="auth-left">
                 <div class="auth-logo">
-                    <a href="{{ url('/') }}">
-                        <span class="h2 text-primary fw-bold">Kiasi Daily</span>
+                    <a href="{{ url('/') }}" class="d-flex align-items-center text-decoration-none">
+                        <img src="{{ asset('assets/images/logo/kiasi_logo.svg') }}" alt="Kiasi Daily" style="width: 50px; height: 50px; margin-right: 12px;">
+                        <span class="h2 text-primary fw-bold mb-0">Kiasi Daily</span>
                     </a>
                 </div>
                 <h1 class="auth-title">Verify Email</h1>

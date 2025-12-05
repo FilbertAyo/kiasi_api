@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
             
             // General preferences
-            $table->string('language', 5)->default('sw');
+            $table->string('language', 5)->default('en');
             $table->string('currency', 10)->default('TZS');
             $table->string('date_format', 20)->default('DD/MM/YYYY');
             $table->string('number_format', 20)->default('1,000.00');

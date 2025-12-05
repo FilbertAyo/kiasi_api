@@ -28,13 +28,13 @@ class AppConfigSeeder extends Seeder
                 'code' => 'sw',
                 'name' => 'Kiswahili',
                 'native_name' => 'Kiswahili',
-                'is_default' => true,
+                'is_default' => false,
             ],
             [
                 'code' => 'en',
                 'name' => 'English',
                 'native_name' => 'English',
-                'is_default' => false,
+                'is_default' => true,
             ],
         ], 'Supported languages');
 

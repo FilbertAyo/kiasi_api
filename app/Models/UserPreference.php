@@ -58,7 +58,7 @@ class UserPreference extends Model
     public static function getDefaults(): array
     {
         return [
-            'language' => 'sw',
+            'language' => 'en',
             'currency' => 'TZS',
             'date_format' => 'DD/MM/YYYY',
             'number_format' => '1,000.00',

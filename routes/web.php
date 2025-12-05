@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\StaticContentController;
 use App\Http\Controllers\Admin\TransactionController as AdminTransactionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicContentController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +65,10 @@ Route::get('/test/email', function () {
         ], 500);
     }
 });
+
+// Public Content Routes (No authentication required)
+Route::get('/privacy-policy', [PublicContentController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/terms-and-conditions', [PublicContentController::class, 'termsAndConditions'])->name('terms-and-conditions');
 
 // Redirect home to login
 Route::get('/', function () {

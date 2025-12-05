@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/pages/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom-brand.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/kiasi_logo.svg') }}" type="image/x-icon">
+    @stack('styles')
 </head>
 
 <body>
     <div id="auth">
         {{ $slot }}
     </div>
+    @stack('scripts')
 </body>
 
 </html>
